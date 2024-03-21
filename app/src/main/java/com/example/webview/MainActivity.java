@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     webSettings.setAllowUniversalAccessFromFileURLs(true);
                 }
                 /* not necessary end */
-                webView.loadUrl("https://azhaanexpress.web.app");
+                webView.loadUrl("file:///android_asset/index.html");
                 // Prevent opening URLs outside of the app
                 webView.setWebViewClient(new WebViewClient() {
                     @Override
