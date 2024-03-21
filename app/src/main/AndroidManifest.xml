@@ -19,7 +19,7 @@
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_info" />
+                android:resource="@string/app_name" />
         </activity>
         <receiver android:name=".MainActivity" 
                   android:exported="false">
