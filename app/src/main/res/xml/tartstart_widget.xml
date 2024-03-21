@@ -2,7 +2,7 @@
 <appwidget-provider
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialKeyguardLayout="@layout/activity_main"
-    android:initialLayout="@layout/activity_main"
+    android:initialLayout="@layout/activity_tiledesk"
     android:minHeight="60dp"
     android:minWidth="60dp"
     android:resizeMode="horizontal|vertical"
