@@ -1,4 +1,11 @@
-package com.tekseker.simplewidget;
+package com.example.webview;
+
+import static android.app.PendingIntent.getActivity;
+
+import static androidx.core.content.ContextCompat.getSystemService;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.content.Context;
 import android.content.Intent;
