@@ -112,7 +112,12 @@ public class MainActivity extends AppCompatActivity {
                     webSettings.setAllowUniversalAccessFromFileURLs(true);
                 }
                 /* not necessary end */
-                webView.loadUrl("file:///android_asset/index.html");
+                webView.loadUrl(https://betawiki.net/wiki/Main_Page");
+                StringBuilder data = new StringBuilder();
+                data .append("<HTML><HEAD><LINK href=\"wikistyle.css\" type=\"text/css\" rel=\"stylesheet\"/></HEAD><body>");
+                data .append(tables.toString());
+                data .append("</body></HTML>");
+                webView.loadDataWithBaseURL("file:///android_asset/", data .toString(), "text/html", "utf-8", null);
                 // Prevent opening URLs outside of the app
                 webView.setWebViewClient(new WebViewClient() {
                     @Override
