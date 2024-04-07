@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     webSettings.setAllowUniversalAccessFromFileURLs(true);
                 }
                 /* not necessary end */
-                webView.loadUrl(https://betawiki.net/wiki/Main_Page");
+                webView.loadUrl("https://betawiki.net/wiki/Main_Page");
                 StringBuilder data = new StringBuilder();
                 data .append("<HTML><HEAD><LINK href=\"wikistyle.css\" type=\"text/css\" rel=\"stylesheet\"/></HEAD><body>");
                 data .append(tables.toString());
