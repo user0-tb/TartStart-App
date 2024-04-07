@@ -120,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
                        webView.loadData(html, "text/html", "utf-8");
                        webView.loadUrl("https://www.betawiki.net");
+            }
             
          
  
