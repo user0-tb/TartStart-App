@@ -112,37 +112,18 @@ public class MainActivity extends AppCompatActivity {
                     webSettings.setAllowUniversalAccessFromFileURLs(true);
                 }
                 /* not necessary end */
-             WebView webView = new WebView(this);
+                WebView webView = new WebView(this);
 
-             setContentView(webView);
+                setContentView(webView);
 
-                    String html = "<html><head><style> src: url('file:///android_asset/style.css')</style></head></html>";
+                       String html = "<html><head><style> src: url('file:///android_asset/style.css')</style></head></html>";
 
-                    webView.loadData(html, "text/html", "utf-8");
-                    webView.loadUrl("https://www.betawiki.net");
-             }
-        
+                       webView.loadData(html, "text/html", "utf-8");
+                       webView.loadUrl("https://www.betawiki.net");
+                }
+         
  
-                webView.setWebViewClient(new WebViewClient() {
-                    @Override
-                    public boolean shouldOverrideUrlLoading(WebView view, String url){
-                        if (url == null || url.startsWith("http://") || url.startsWith("https://")) {
-                            view.loadUrl(url);
-                            return false;
-                        }
-                        try {
-                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                            view.getContext().startActivity(intent);
-                            return true;
-                        } catch (Exception e) {
-                            return true;
-                        }
-                    }
-                });
-            }
-        }, DELAY_MILLIS);
-
-    }
+                
     @Override
     public void onBackPressed(){
         WebView wv = (WebView)findViewById(R.id.webView);
