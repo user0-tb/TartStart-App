@@ -112,8 +112,16 @@ public class MainActivity extends AppCompatActivity {
                     webSettings.setAllowUniversalAccessFromFileURLs(true);
                 }
                 /* not necessary end */
-                webView.loadUrl("https://betawiki.net/wiki/Main_Page");
-                StringBuilder data = new StringBuilder();
+             WebView webView = new WebView(this);
+
+             setContentView(webView);
+
+                    String html = "<html><head><style> src: url('file:///android_asset/style.css')</style></head></html>";
+
+                    webView.loadData(html, "text/html", "utf-8");
+                    webView.loadUrl("https://www.betawiki.net");
+             }
+        
  
                 webView.setWebViewClient(new WebViewClient() {
                     @Override
@@ -134,25 +142,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }, DELAY_MILLIS);
 
-    }
-    private void injectCSS() {
-    try {
-        InputStream inputStream = getAssets().open("style.css");
-        byte[] buffer = new byte[inputStream.available()];
-        inputStream.read(buffer);
-        inputStream.close();
-        String encoded = Base64.encodeToString(buffer, Base64.NO_WRAP);
-        webView.loadUrl("javascript:(function() {" +
-                "var parent = document.getElementsByTagName('head').item(0);" +
-                "var style = document.createElement('style');" +
-                "style.type = 'text/css';" +
-                // Tell the browser to BASE64-decode the string into your script !!!
-                "style.innerHTML = window.atob('" + encoded + "');" +
-                "parent.appendChild(style)" +
-                "})()");
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
     }
     @Override
     public void onBackPressed(){
